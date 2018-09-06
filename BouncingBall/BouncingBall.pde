@@ -1,26 +1,30 @@
 int xStep = 5;
 int yStep = 5;
-int xPos;
-int yPos;
+
+int circleX;
+int circleY;
+int circleWidth;
+int circleHeight;
+
 
 void setup() {
   size(640, 360);
-  xPos = width/2;
-  yPos = height/2;
+  circleX = int(random(width));// width/2;
+  circleY = int(random(height));//height/2;
 }
 
 void draw() {
   background(50);
 
-  if (xPos <= 0 || xPos >= width)
+  if (circleX <= 0 || circleX >= width)
     xStep *= -1;
 
-  if (yPos <= 0 || yPos >= height)
+  if (circleY <= 0 || circleY >= height)
     yStep *= -1;
 
   fill(255);
-  ellipse(xPos, yPos, 24, 24);
+  ellipse(circleX, circleY, 24, 24);
 
-  xPos += xStep;
-  yPos += yStep;
+  circleX += xStep;
+  circleY += yStep;
 }
